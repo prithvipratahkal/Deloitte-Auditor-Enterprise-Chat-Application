@@ -22,3 +22,38 @@ The project consists of two main components:
 ## Frontend Interface
 
 ## Installation and Setup
+
+Follow these instructions to set up both the backend and frontend of the application.
+
+### Backend Setup (Python + MySQL)
+
+git clone https://github.com/yourusername/deloitte-chat.git
+cd deloitte-chat/Backend
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+
+#### Set Up the MySQL Database
+mysql -u root
+CREATE DATABASE cmpe;
+USE cmpe;
+
+CREATE TABLE gpt_history (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    role VARCHAR(20),
+    message TEXT,
+    time DATETIME
+);
+
+#### Configure Environment Variables
+Create a .env file to store your OpenAI API Key (or export it directly in your shell):
+export OPENAI_API_KEY="your-openai-api-key"
+
+#### Run the Backend Server
+python server.py
+
+The server will now be running at http://localhost:8888
+
+
+
+
