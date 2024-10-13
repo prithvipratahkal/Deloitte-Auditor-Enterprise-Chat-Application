@@ -22,7 +22,7 @@ The project consists of two main components:
 
 ## Frontend Interface
 
-![Frontend Interface](./Frontend/public/frontend_app.png)
+![Frontend Interface](./frontend/frontend_app.png)
 
 ## Installation and Setup
 
