@@ -11,15 +11,18 @@ The project consists of two main components:
 - Query History: Conversation history is stored in a MySQL database, allowing the system to maintain context over multiple queries.
 - Simple UI: The interface is designed to be intuitive and user-friendly for auditors.
 
+```
 .
 ├── Backend                   # Backend server in Python (Bottle framework)
 │   ├── server.py             # Main backend application
 ├── Frontend                  # Frontend ReactJS application
 │   ├── src                   # Source code for React app
 │   └── public                # Public assets like index.html
-
+```
 
 ## Frontend Interface
+
+![Frontend Interface](./Frontend/public/frontend_screenshot.png)
 
 ## Installation and Setup
 
@@ -69,6 +72,10 @@ The React development server should open at http://localhost:3000 in your web br
  - Enter a Query: Enter your tax-related query into the text box (e.g., "What are the tax implications of selling a rental property?").
  - Send the Query: Click the Send button to submit the query to the GPT-3.5 backend.
  - View the Response: The GPT-3.5 model will respond, and the response will appear below the prompt. Previous responses are stored in the database and included as context in future queries.
+
+   ## API Endpoints
+   POST /tax-chat
+   
 
 ## Acknowledgments
 
