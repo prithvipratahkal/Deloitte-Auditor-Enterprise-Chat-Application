@@ -27,18 +27,18 @@ Follow these instructions to set up both the backend and frontend of the applica
 
 ### Backend Setup (Python + MySQL)
 
-git clone https://github.com/yourusername/deloitte-chat.git
-cd deloitte-chat/Backend
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
+- git clone https://github.com/yourusername/deloitte-chat.git
+- cd deloitte-chat/Backend
+- python3 -m venv venv
+- source venv/bin/activate  # On Windows: venv\Scripts\activate
+- pip install -r requirements.txt
 
 #### Set Up the MySQL Database
-mysql -u root
-CREATE DATABASE cmpe;
-USE cmpe;
+- mysql -u root
+- CREATE DATABASE cmpe;
+- USE cmpe;
 
-CREATE TABLE gpt_history (
+- CREATE TABLE gpt_history (
     id INT AUTO_INCREMENT PRIMARY KEY,
     role VARCHAR(20),
     message TEXT,
@@ -47,12 +47,33 @@ CREATE TABLE gpt_history (
 
 #### Configure Environment Variables
 Create a .env file to store your OpenAI API Key (or export it directly in your shell):
-export OPENAI_API_KEY="your-openai-api-key"
+- export OPENAI_API_KEY="your-openai-api-key"
 
 #### Run the Backend Server
 python server.py
 
 The server will now be running at http://localhost:8888
+
+### Frontend Setup (ReactJS)
+
+- cd ../Frontend
+- npm install
+- npm start
+
+The React development server should open at http://localhost:3000 in your web browser.
+
+## How to Use
+
+- Open the Application:
+      - Visit http://localhost:3000 in your browser.
+ - Enter a Query: Enter your tax-related query into the text box (e.g., "What are the tax implications of selling a rental property?").
+ - Send the Query: Click the Send button to submit the query to the GPT-3.5 backend.
+ - View the Response: The GPT-3.5 model will respond, and the response will appear below the prompt. Previous responses are stored in the database and included as context in future queries.
+
+## Acknowledgments
+
+OpenAI for providing the GPT-3.5-turbo model.
+
 
 
 
